@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Sidebar from "./Components/Sidebar";
+import PriceList from "./Screen/PriceList";
+import Invoice from "./Screen/Invoice";
+import Customer from "./Screen/Customer";
+import Business from "./Screen/Business";
+import Navdash from "./Components/Navdash";
+import Journal from "./Screen/Journal";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-function App() {
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <div className="flex-1">
+      <Navdash/>
+      <div className="flex">
+        <Sidebar/>
+        <Routes>
+          <Route path="/" element={<Invoice/>}/>
+          <Route path="/customer" element={<Customer/>}/>
+          <Route path="/business" element={<Business/>}/>
+          <Route path="/price" element={<PriceList/>}/>
+          <Route path="/journal" element={<Journal/>}/>
+        </Routes>
+      </div>
+    </div></BrowserRouter>
+  
   );
-}
+};
 
 export default App;
