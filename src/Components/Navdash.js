@@ -4,8 +4,8 @@ import logo from "../images/GB.png";
 
 const Navdash = () => {
   return (
-    <div className="flex bg-blue-600 justify-between px-[5%] py-[1%] w-full">
-        <div className="flex text-white space-x-3">
+    <div className="flex bg-blue-600 justify-end lg:justify-between px-[5%] py-[1%] w-full">
+        <div className="text-white space-x-3 hidden lg:flex">
           <div className="flex">
             <div className="bg-gray-300 rounded-full w-12 h-12">
               <img
