@@ -54,8 +54,8 @@ const PriceList = () => {
         </div>
       </div>
       {tableData ? (
-  <div style={{ maxHeight: '580px', overflowY: 'auto' }}>
-    <table className="bg-white min-h-screen table-auto border-separate border-spacing-4 items-center justify-center w-full">
+  <div className="flex overflow-y-auto h-screen">
+    <table className="bg-white h-screen table-auto border-separate border-spacing-4 items-center justify-center w-full">
       <thead>
         <tr>
           <th className="text-left text-sm text-gray-500 hidden md:table-cell">Article No.</th>
@@ -68,7 +68,7 @@ const PriceList = () => {
         </tr>
       </thead>
       <tbody>
-        {tableData.slice(0, 19).map((product) => (
+        {tableData.map((product) => (
           <tr key={product.article}>
             <td className="whitespace-nowrap text-sm text-gray-900 border rounded-full hidden md:table-cell">
               {product.article}
