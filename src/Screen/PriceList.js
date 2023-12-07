@@ -54,50 +54,55 @@ const PriceList = () => {
         </div>
       </div>
       {tableData ? (
-        <table className="bg-white min-h-screen table-auto border-separate border-spacing-4 items-center justify-center w-full">
-          <thead>
-            <tr>
-              <th className="text-left text-sm text-gray-500 hidden md:table-cell">Article No.</th>
-              <th className="text-left text-sm text-gray-500">Product/Service</th>
-              <th className="text-left text-sm text-gray-500 hidden lg:table-cell">In Price</th>
-              <th className="text-left text-sm text-gray-500">Price</th>
-              <th className="text-left text-sm text-gray-500 hidden md:table-cell">Unit</th>
-              <th className="text-left text-sm text-gray-500 hidden md:table-cell">In Stock</th>
-              <th className="text-left text-sm text-gray-500 hidden lg:table-cell">desc</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tableData.map((product) => (
-              <tr key={product.article} >
-                <td className="whitespace-nowrap text-sm text-gray-900 border rounded-full hidden md:table-cell">
-                  {product.article}
-                </td>
-                <td className="whitespace-nowrap text-sm text-gray-900 border rounded-full">
-                  {product.product}
-                </td>
-                <td className="whitespace-nowrap text-sm text-gray-900 border rounded-full hidden lg:table-cell">
-                  {product.inprice}
-                </td>
-                <td className="whitespace-nowrap text-sm text-gray-900 border rounded-full">
-                  {product.price}
-                </td>
-                <td className="whitespace-nowrap p-1 text-sm text-gray-900 border rounded-full hidden md:table-cell">
-                  {product.unit}
-                </td>
-                <td className="whitespace-nowrap p-1 text-sm text-gray-900 border rounded-full hidden md:table-cell">
-                  {product.instock}
-                </td>
-                <td className="whitespace-nowrap p-1 text-sm text-gray-900 border rounded-full hidden lg:table-cell">
-                  {product.desc}
-                </td>
-                <span className="cursor-pointer">···</span>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        <div>Server is Not Active</div>
-      )}
+  <div style={{ maxHeight: '580px', overflowY: 'auto' }}>
+    <table className="bg-white min-h-screen table-auto border-separate border-spacing-4 items-center justify-center w-full">
+      <thead>
+        <tr>
+          <th className="text-left text-sm text-gray-500 hidden md:table-cell">Article No.</th>
+          <th className="text-left text-sm text-gray-500">Product/Service</th>
+          <th className="text-left text-sm text-gray-500 hidden lg:table-cell">In Price</th>
+          <th className="text-left text-sm text-gray-500">Price</th>
+          <th className="text-left text-sm text-gray-500 hidden md:table-cell">Unit</th>
+          <th className="text-left text-sm text-gray-500 hidden md:table-cell">In Stock</th>
+          <th className="text-left text-sm text-gray-500 hidden lg:table-cell">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {tableData.slice(0, 19).map((product) => (
+          <tr key={product.article}>
+            <td className="whitespace-nowrap text-sm text-gray-900 border rounded-full hidden md:table-cell">
+              {product.article}
+            </td>
+            <td className="whitespace-nowrap text-sm text-gray-900 border rounded-full">
+              {product.product}
+            </td>
+            <td className="whitespace-nowrap text-sm text-gray-900 border rounded-full hidden lg:table-cell">
+              {product.inprice}
+            </td>
+            <td className="whitespace-nowrap text-sm text-gray-900 border rounded-full">
+              {product.price}
+            </td>
+            <td className="whitespace-nowrap p-1 text-sm text-gray-900 border rounded-full hidden md:table-cell">
+              {product.unit}
+            </td>
+            <td className="whitespace-nowrap p-1 text-sm text-gray-900 border rounded-full hidden md:table-cell">
+              {product.instock}
+            </td>
+            <td className="whitespace-nowrap p-1 text-sm text-gray-900 border rounded-full hidden lg:table-cell">
+              {product.desc}
+            </td>
+            <td className="whitespace-nowrap text-sm text-gray-900 border rounded-full hidden lg:table-cell">
+              <span className="cursor-pointer">···</span>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+) : (
+  <div>Server is Not Active</div>
+)}
+
     </div>
   );
 };

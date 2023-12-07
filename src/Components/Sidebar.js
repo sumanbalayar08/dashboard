@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import image1 from "../images/invoices.png";
 import image2 from "../images/person.png";
@@ -12,7 +12,6 @@ import image9 from "../images/inventory.png";
 import image10 from "../images/member.png";
 import image11 from "../images/import.png";
 import image12 from "../images/logout.png";
-
 
 const Sidebar = () => {
   const items = [
@@ -88,48 +87,50 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="hidden lg:block items-center justify-center space-y-4 py-[1%] text-black shadow-2xl px-[2%] min-h-screen">
-      
+    <div>
+      <div className="hidden xl:block items-center justify-center space-y-4 py-[1%] text-black shadow-2xl px-[2%] min-h-screen">
+        <h1 className="flex items-center justify-center text-xl">Menu</h1>
+        <hr />
+        <ul className="flex-1 space-y-4 justify-start">
+          {items.map((item) => (
+            <NavLink
+              key={item.url}
+              className="flex items-center space-x-2"
+              to={item.url}
+              activeClassName="text-green-500"
+            >
+              <span
+                className={`p-1 rounded-full ${
+                  pathname === `/${item.url}` ? "bg-green-500" : "hidden"
+                }`}
+              ></span>{" "}
+              <img src={item.image} className="w-5 h-5" alt="logo" />
+              <li className="flex">{item.name}</li>
+            </NavLink>
+          ))}
+        </ul>
+      </div>
+      <div className="block xl:hidden py-[8%]">
       <h1 className="flex items-center justify-center text-xl">Menu</h1>
-      <hr />
-      <ul className="flex-1 space-y-4 justify-start">
-        {items.map((item) => (
-          <NavLink
-            key={item.url}
-            className="flex items-center space-x-2"
-            to={item.url}
-            activeClassName="text-green-500"
-          >
-            <span
-              className={`p-1 rounded-full ${
-                pathname === `/${item.url}` ? "bg-green-500" : "hidden"
-              }`}
-            ></span>{" "}
-            <img src={item.image} className="w-5 h-5" alt="logo"/>
-            <li className="flex">{item.name}</li>
-          </NavLink>
-        ))}
-      </ul>
-
-      <ul className="flex-1 space-y-4 justify-start">
-        {items.map((item) => (
-          <NavLink
-            key={item.url}
-            className="flex items-center space-x-2"
-            to={item.url}
-            activeClassName="text-green-500"
-          >
-            <span
-              className={`p-1 rounded-full ${
-                pathname === `/${item.url}` ? "bg-green-500" : "hidden"
-              }`}
-            ></span>{" "}
-            <img src={item.image} className="w-5 h-5" alt="logo"/>
-            <li className="flex">{item.name}</li>
-          </NavLink>
-        ))}
-      </ul>
-
+        <hr />
+        <ul className="flex-1 space-y-4 justify-start">
+          {items.map((item) => (
+            <NavLink
+              key={item.url}
+              className="flex items-center space-x-2"
+              to={item.url}
+              activeClassName="text-green-500"
+            >
+              <span
+                className={`p-1 rounded-full ${
+                  pathname === `/${item.url}` ? "bg-green-500" : "hidden"
+                }`}
+              ></span>{" "}
+              <img src={item.image} className="w-6 h-6" alt="logo" />
+            </NavLink>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

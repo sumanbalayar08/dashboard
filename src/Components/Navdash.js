@@ -1,11 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import image2 from "../images/person.png";
 import logo from "../images/GB.png";
+import { GiHamburgerMenu } from "react-icons/gi";
+
 
 const Navdash = () => {
+
+  const[toggle,settoggle]=useState(false)
+
+  const toggleMenu=()=>{
+    settoggle(!toggle)
+  }
+
   return (
-    <div className="flex bg-blue-600 justify-end lg:justify-between px-[5%] py-[1%] w-full">
-        <div className="text-white space-x-3 hidden lg:flex">
+    <div className="flex bg-blue-600 justify-end xl:justify-between px-[5%] py-2 w-full">
+      <GiHamburgerMenu
+          className="absolute cursor-pointer block xl:hidden left-[5%] top-[2%] scale-125"
+          onClick={toggleMenu}
+          color='white'
+        />
+        <div className="text-white space-x-3 hidden xl:flex">
           <div className="flex">
             <div className="bg-gray-300 rounded-full w-12 h-12">
               <img
