@@ -100,7 +100,7 @@ const PriceList = () => {
     </table>
   </div>
 ) : (
-  <div>Server is Not Active</div>
+  <p>Server is Not Active</p>
 )}
 
     </div>
