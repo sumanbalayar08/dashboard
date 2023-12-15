@@ -9,7 +9,7 @@ const PriceList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios("https://74.50.64.34/api/prices/");
+        const res = await axios("https://test.sajhaghar.com/api/prices/");
         settableData(res.data.prices);
       } catch (err) {
         console.log("Error Fetching the data", err);
