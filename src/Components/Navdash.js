@@ -15,7 +15,7 @@ const Navdash = () => {
   return (
     <div className="flex bg-blue-600 justify-between items-center px-[5%] py-4 min-w-full">
         <div className="block cursor-pointer xl:hidden ">
-          <GiHamburgerMenu className="scale-125" onClick={toggleMenu} color='white'/>
+          <GiHamburgerMenu className="scale-150" onClick={toggleMenu} color='white'/>
         </div>
 
         <div className="text-white space-x-3 hidden xl:flex">
