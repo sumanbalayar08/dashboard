@@ -13,12 +13,11 @@ const Navdash = () => {
   }
 
   return (
-    <div className="flex bg-blue-600 justify-end xl:justify-between px-[5%] py-2 w-full">
-      <GiHamburgerMenu
-          className="absolute cursor-pointer block xl:hidden left-[5%] top-[2%] scale-125"
-          onClick={toggleMenu}
-          color='white'
-        />
+    <div className="flex bg-blue-600 justify-between items-center px-[5%] py-4 min-w-full">
+        <div className="block cursor-pointer xl:hidden ">
+          <GiHamburgerMenu className="scale-125" onClick={toggleMenu} color='white'/>
+        </div>
+
         <div className="text-white space-x-3 hidden xl:flex">
           <div className="flex">
             <div className="bg-gray-300 rounded-full w-12 h-12">
@@ -36,6 +35,7 @@ const Navdash = () => {
             <span className="text-sm font-sans">Starfjord AS</span>
           </div>
         </div>
+        
         <div className="flex items-center text-white space-x-2">
           <p>Norsk Bokmal</p>
           <img src={logo} alt="flag" className="w-6 h-6" />

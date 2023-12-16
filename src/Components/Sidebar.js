@@ -87,8 +87,8 @@ const Sidebar = () => {
   };
 
   return (
-    <div>
-      <div className="hidden xl:block items-center justify-center space-y-4 py-[1%] text-black shadow-sm px-[2%] h-screen">
+    <div className="min-h-screen shadow-lg">
+      <div className="hidden xl:block items-center justify-center space-y-4 py-[1%] text-black w-48 p-4">
         <h1 className="flex items-center justify-center text-xl">Menu</h1>
         <hr />
         <ul className="flex-1 space-y-4 justify-start">
@@ -99,18 +99,13 @@ const Sidebar = () => {
               to={item.url}
               activeClassName="text-green-500"
             >
-              <span
-                className={`p-1 rounded-full ${
-                  pathname === `/${item.url}` ? "bg-green-500" : "hidden"
-                }`}
-              ></span>{" "}
               <img src={item.image} className="w-5 h-5" alt="logo" />
               <li className="flex">{item.name}</li>
             </NavLink>
           ))}
         </ul>
       </div>
-      <div className="block xl:hidden py-[8%]">
+      <div className="hidden py-[8%]">
       <h1 className="flex items-center justify-center text-xl">Menu</h1>
         <hr />
         <ul className="flex-1 space-y-4 justify-start">

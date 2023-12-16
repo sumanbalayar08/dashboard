@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import image3 from '../images/bandage.png'
+import image2 from '../images/printer.png'
+import image1 from '../images/plussign.png'
+import image4 from '../images/search.png'
+
+
 
 const PriceList = () => {
   const headers = ["Article No.","Product/Service", "In Price","Price","Unit","In Stock","desc"];
@@ -25,8 +31,8 @@ const PriceList = () => {
   }, [tableData]);
 
   return (
-    <div className="flex-1 items-center justify-center">
-      <div className="flex-1 md:flex justify-between space-y-4 p-2">
+    <div className="flex-1 items-center justify-center p-1">
+      <div className="flex-initial md:flex items-start justify-between space-y-4 md:space-y-0 p-2">
         <div className="flex flex-col justify-center gap-y-3 items-center">
           <div className="w-full">
             <input
@@ -41,20 +47,20 @@ const PriceList = () => {
             />
           </div>
         </div>
-        <div className="flex md:inline-flex gap-x-2 justify-between">
-          <button className="border-1 rounded-md shadow-md shadow-gray-300  justify-end items-center">
-            New Product
-          </button>
-          <button className="border-1 p-1 rounded-md shadow-md shadow-gray-300">
-            Print List
-          </button>
-          <button className="border-1 p-1 rounded-md shadow-md shadow-gray-300">
-            Advanced Mode
-          </button>
+        <div className="flex gap-x-2 justify-between">
+          <div className="shadow-md rounded-xl px-6 py-1 items-center justify-center">
+          <img src={image1} className="w-6 h-6"/>
+          </div>
+          <div className="shadow-md rounded-xl px-6 py-1 items-center justify-center">
+          <img src={image2} className="w-6 h-6"/>
+          </div>
+          <div className="shadow-md rounded-xl px-6 py-1 items-center justify-center">
+          <img src={image3} className="w-6 h-6"/>
+          </div>
         </div>
       </div>
       {tableData ? (
-  <div className="flex overflow-y-auto h-screen">
+  <div className="flex h-screen">
     <table className="bg-white h-screen table-auto border-separate border-spacing-4 items-center justify-center w-full">
       <thead>
         <tr>
@@ -91,9 +97,7 @@ const PriceList = () => {
             <td className="whitespace-nowrap p-1 text-sm text-gray-900 border rounded-full hidden lg:table-cell">
               {product.desc}
             </td>
-            <td className="whitespace-nowrap text-sm text-gray-900 border rounded-full hidden lg:table-cell">
               <span className="cursor-pointer">···</span>
-            </td>
           </tr>
         ))}
       </tbody>
