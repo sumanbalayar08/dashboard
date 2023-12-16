@@ -87,8 +87,8 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="shadow-lg flex h-screen">
-      <div className="hidden xl:block items-center justify-center space-y-4 py-[1%] text-black w-48 p-4 py-2">
+    <div className="flex h-screen overflow-y-auto">
+      <div className="hidden xl:block items-center justify-center space-y-4 text-black w-48 p-4 py-2">
         <h1 className="flex items-center justify-center text-xl">Menu</h1>
         <hr />
         <ul className="flex-1 space-y-4 justify-start">
